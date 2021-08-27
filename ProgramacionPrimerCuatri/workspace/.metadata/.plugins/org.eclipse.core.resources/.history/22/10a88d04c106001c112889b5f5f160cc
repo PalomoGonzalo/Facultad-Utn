@@ -1,0 +1,24 @@
+/*
+ ============================================================================
+ Name        : ClaseDos.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout,NULL);
+	/*
+	 * int a;// numeros enteros
+	 * float f; //numeros con decimales
+	 * char c; // 1 solo caracter
+	 *
+	 */
+
+	return EXIT_SUCCESS;
+}

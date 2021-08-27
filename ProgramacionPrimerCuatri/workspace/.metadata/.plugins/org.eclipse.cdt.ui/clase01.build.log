@@ -1,0 +1,6 @@
+22:15:59 **** Incremental Build of configuration Debug for project clase01 ****
+Info: Internal Builder is used for build
+gcc -o clase01.exe "src\\clase01.o" 
+
+22:16:00 Build Finished. 0 errors, 0 warnings. (took 277ms)
+

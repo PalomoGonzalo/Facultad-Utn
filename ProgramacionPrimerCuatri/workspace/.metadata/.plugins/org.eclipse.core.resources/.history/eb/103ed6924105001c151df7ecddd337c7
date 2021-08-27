@@ -1,0 +1,64 @@
+/*
+ ============================================================================
+ Name        : clase01.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout,NULL);
+	/*int numero;
+	int suma;
+	printf("ingrese numero\n");
+	scanf("%d",&numero);
+	suma =numero + numero;
+	printf(" el numero es %d",suma);
+	 */
+
+	/*int resultado;
+	int numeroUno;
+	int numeroDos;
+	printf("ingrese numero\n");
+	scanf("%d",&numeroUno);
+	printf("ingrese otro numero\n");
+	scanf("%d",&numeroDos);
+	resultado=numeroUno-numeroDos;
+	printf("La resta es %d",resultado);
+	*/
+	int numeroUno;
+	int numeroDos;
+	char letra = 's';
+	int resultado;
+
+
+	while(letra=='s')
+	{
+
+			printf("ingrese numero\n");
+			scanf("%d",&numeroUno);
+			printf("ingrese otro numero\n");
+			scanf("%d",&numeroDos);
+			resultado=numeroUno+numeroDos;
+			printf("La resta es %d\n",resultado);
+			printf("\n desea continuar s para si n para no\n");
+			fflush(stdin);
+			scanf("%c",&letra);
+
+	}
+
+
+
+
+
+
+
+
+
+	return EXIT_SUCCESS;
+}

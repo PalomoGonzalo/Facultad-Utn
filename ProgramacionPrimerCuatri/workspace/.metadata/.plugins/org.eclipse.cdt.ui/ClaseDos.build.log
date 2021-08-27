@@ -1,0 +1,11 @@
+20:36:09 **** Incremental Build of configuration Debug for project ClaseDos ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ClaseDos.o" "..\\src\\ClaseDos.c" 
+..\src\ClaseDos.c: In function 'main':
+..\src\ClaseDos.c:15:2: warning: 'a' is used uninitialized in this function [-Wuninitialized]
+   15 |  printf("ingrese su edad %d",a);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o ClaseDos.exe "src\\ClaseDos.o" 
+
+20:36:10 Build Finished. 0 errors, 1 warnings. (took 563ms)
+
