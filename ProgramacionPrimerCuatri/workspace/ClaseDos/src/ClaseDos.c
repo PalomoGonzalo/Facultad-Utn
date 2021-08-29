@@ -12,7 +12,7 @@ int main(void) {
 	 *
 	 */
 	int a;
-	printf("ingrese su edad %d",a);
+	printf("ingrese su edad ");
 
 
 
