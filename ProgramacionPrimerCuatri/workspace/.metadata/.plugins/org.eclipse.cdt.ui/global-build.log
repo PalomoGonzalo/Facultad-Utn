@@ -1,20 +1,32 @@
-19:12:33 **** Rebuild of configuration Debug for project ClaseDos ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ClaseDos.o" "..\\src\\ClaseDos.c" 
-gcc -o ClaseDos.exe "src\\ClaseDos.o" 
-19:13:30 **** Incremental Build of configuration Debug for project ClaseDos ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ClaseDos.o" "..\\src\\ClaseDos.c" 
-gcc -o ClaseDos.exe "src\\ClaseDos.o" 
-19:57:41 **** Rebuild of configuration Debug for project ClaseDos ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ClaseDos.o" "..\\src\\ClaseDos.c" 
-gcc -o ClaseDos.exe "src\\ClaseDos.o" 
-20:36:09 **** Incremental Build of configuration Debug for project ClaseDos ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ClaseDos.o" "..\\src\\ClaseDos.c" 
-..\src\ClaseDos.c: In function 'main':
-..\src\ClaseDos.c:15:2: warning: 'a' is used uninitialized in this function [-Wuninitialized]
-   15 |  printf("ingrese su edad %d",a);
-      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-gcc -o ClaseDos.exe "src\\ClaseDos.o" 
+20:47:41 **** Build of configuration Debug for project clase03 ****
+make all 
+Building file: ../src/clase03.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/clase03.d" -MT"src/clase03.o" -o "src/clase03.o" "../src/clase03.c"
+../src/clase03.c: In function ‘main’:
+../src/clase03.c:13:8: warning: unused variable ‘impuestosResultados’ [-Wunused-variable]
+   13 |  float impuestosResultados;
+      |        ^~~~~~~~~~~~~~~~~~~
+../src/clase03.c:12:8: warning: variable ‘promedio’ set but not used [-Wunused-but-set-variable]
+   12 |  float promedio;
+      |        ^~~~~~~~
+../src/clase03.c:11:8: warning: unused variable ‘impuestos’ [-Wunused-variable]
+   11 |  float impuestos;
+      |        ^~~~~~~~~
+../src/clase03.c: In function ‘factorial’:
+../src/clase03.c:87:9: warning: unused variable ‘factor’ [-Wunused-variable]
+   87 |     int factor=a;
+      |         ^~~~~~
+../src/clase03.c:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+  103 | }
+      | ^
+Finished building: ../src/clase03.c
+ 
+Building target: clase03
+Invoking: GCC C Linker
+gcc  -o "clase03"  ./src/clase03.o   
+Finished building target: clase03
+ 
+20:47:49 **** Incremental Build of configuration Debug for project clase03 ****
+make all 
+make: No se hace nada para 'all'.

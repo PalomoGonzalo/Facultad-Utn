@@ -1,13 +1,3 @@
-/*
- ============================================================================
- Name        : clase3.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 int sumarEnteros(int numUno, int nomDos);
@@ -38,10 +28,8 @@ int main(void) {
 
 
 	/*printf("este es el resultado del promedio %f",promedio);
-
 	printf("ingrese los impuestos pagados");
 	scanf("%f",&impuestos);
-
 	impuestosResultados= impuestos+resultado;
 */
 
@@ -113,7 +101,3 @@ int factorial(int a)
          printf("\nEl factorial de %d es: %d \n",a,factorial);
 
 }
-
-
-
-
