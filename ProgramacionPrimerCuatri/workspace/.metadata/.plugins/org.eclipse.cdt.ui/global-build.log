@@ -1,32 +1,30 @@
-20:47:41 **** Build of configuration Debug for project clase03 ****
+22:08:41 **** Build of configuration Debug for project tp3_linux ****
 make all 
-Building file: ../src/clase03.c
+Building file: ../Controller.c
 Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/clase03.d" -MT"src/clase03.o" -o "src/clase03.o" "../src/clase03.c"
-../src/clase03.c: In function ‘main’:
-../src/clase03.c:13:8: warning: unused variable ‘impuestosResultados’ [-Wunused-variable]
-   13 |  float impuestosResultados;
-      |        ^~~~~~~~~~~~~~~~~~~
-../src/clase03.c:12:8: warning: variable ‘promedio’ set but not used [-Wunused-but-set-variable]
-   12 |  float promedio;
-      |        ^~~~~~~~
-../src/clase03.c:11:8: warning: unused variable ‘impuestos’ [-Wunused-variable]
-   11 |  float impuestos;
-      |        ^~~~~~~~~
-../src/clase03.c: In function ‘factorial’:
-../src/clase03.c:87:9: warning: unused variable ‘factor’ [-Wunused-variable]
-   87 |     int factor=a;
-      |         ^~~~~~
-../src/clase03.c:103:1: warning: control reaches end of non-void function [-Wreturn-type]
-  103 | }
-      | ^
-Finished building: ../src/clase03.c
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Controller.d" -MT"Controller.o" -o "Controller.o" "../Controller.c"
+Finished building: ../Controller.c
  
-Building target: clase03
+Building file: ../Employee.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Employee.d" -MT"Employee.o" -o "Employee.o" "../Employee.c"
+Finished building: ../Employee.c
+ 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"parser.d" -MT"parser.o" -o "parser.o" "../parser.c"
+Finished building: ../parser.c
+ 
+Building target: tp3_linux
 Invoking: GCC C Linker
-gcc  -o "clase03"  ./src/clase03.o   
-Finished building target: clase03
+gcc  -o "tp3_linux"  ./Controller.o ./Employee.o ./main.o ./parser.o    /home/mati/Escritorio/Facultad-Utn/ProgramacionPrimerCuatri/workspace/tp3_linux/LinkedList.a
+Finished building target: tp3_linux
  
-20:47:49 **** Incremental Build of configuration Debug for project clase03 ****
+22:08:52 **** Incremental Build of configuration Debug for project tp3_linux ****
 make all 
 make: No se hace nada para 'all'.

@@ -925,3 +925,13 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-08-31 20:44:20.072
 !MESSAGE Indexed 'clase03' (1 sources, 55 headers) in 0,326 sec: 973 declarations; 1.807 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+!SESSION 2021-08-31 20:49:00.325 -----------------------------------------------
+eclipse.buildId=4.20.0.I20210611-1600
+java.version=11.0.11
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_AR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-08-31 22:08:33.644
+!MESSAGE Indexed 'tp3_linux' (3 sources, 59 headers) in 0,339 sec: 1.132 declarations; 1.874 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
