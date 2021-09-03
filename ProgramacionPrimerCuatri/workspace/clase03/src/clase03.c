@@ -11,7 +11,7 @@ int main(void) {
 	int numUno;
 	int numDos;
 	int resultado;
-	int resultadoDivison=dividir(numUno, numDos,&resultado);
+	int resultadoDivison;//=dividir(numUno, numDos,&resultado);
 	float impuestos;
 	float promedio;
 	float impuestosResultados;
@@ -119,8 +119,3 @@ int dividir (int numUno,int numDos,int* resultado)
 
 }
 
-void imprimirResultadoString(char mensaje[],int numero)
-{
-	printf("")
-
-}

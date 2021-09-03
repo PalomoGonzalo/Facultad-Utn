@@ -1,30 +1,6 @@
-22:08:41 **** Build of configuration Debug for project tp3_linux ****
+22:07:45 **** Incremental Build of configuration Debug for project clase04 ****
 make all 
-Building file: ../Controller.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Controller.d" -MT"Controller.o" -o "Controller.o" "../Controller.c"
-Finished building: ../Controller.c
- 
-Building file: ../Employee.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Employee.d" -MT"Employee.o" -o "Employee.o" "../Employee.c"
-Finished building: ../Employee.c
- 
-Building file: ../main.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building file: ../parser.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"parser.d" -MT"parser.o" -o "parser.o" "../parser.c"
-Finished building: ../parser.c
- 
-Building target: tp3_linux
-Invoking: GCC C Linker
-gcc  -o "tp3_linux"  ./Controller.o ./Employee.o ./main.o ./parser.o    /home/mati/Escritorio/Facultad-Utn/ProgramacionPrimerCuatri/workspace/tp3_linux/LinkedList.a
-Finished building target: tp3_linux
- 
-22:08:52 **** Incremental Build of configuration Debug for project tp3_linux ****
+make: No se hace nada para 'all'.
+22:07:54 **** Incremental Build of configuration Debug for project clase04 ****
 make all 
 make: No se hace nada para 'all'.
