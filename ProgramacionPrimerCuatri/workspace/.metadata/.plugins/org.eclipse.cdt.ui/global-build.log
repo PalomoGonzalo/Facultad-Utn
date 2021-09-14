@@ -1,6 +1,24 @@
-22:07:45 **** Incremental Build of configuration Debug for project clase04 ****
-make all 
-make: No se hace nada para 'all'.
-22:07:54 **** Incremental Build of configuration Debug for project clase04 ****
-make all 
-make: No se hace nada para 'all'.
+18:31:19 **** Rebuild of configuration Debug for project clase6_tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getChar':
+..\src\funciones.c:14:13: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+   14 |     scanf("%s", &auxiliarChar);
+      |            ~^   ~~~~~~~~~~~~~
+      |             |   |
+      |             |   char **
+      |             char *
+..\src\funciones.c:15:12: warning: returning 'char *' from a function with return type 'char' makes integer from pointer without a cast [-Wint-conversion]
+   15 |     return auxiliarChar;
+      |            ^~~~~~~~~~~~
+..\src\funciones.c: In function 'getInt':
+..\src\funciones.c:19:6: warning: unused variable 'flag' [-Wunused-variable]
+   19 |  int flag=1;
+      |      ^~~~
+..\src\funciones.c: In function 'getFloat':
+..\src\funciones.c:26:6: warning: unused variable 'flag' [-Wunused-variable]
+   26 |  int flag=1;
+      |      ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase6_tarea.o" "..\\src\\clase6_tarea.c" 
+gcc -o clase6_tarea.exe "src\\clase6_tarea.o" "src\\funciones.o" 
+Info: Nothing to build for clase6_tarea
