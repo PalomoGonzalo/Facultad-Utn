@@ -56,13 +56,16 @@ void agregarTemeperaturas(float array[])
 	array[indice-1]=temperatura;
 
 }
-void imprimirIntArray(int array[],int len)
+void imprimirIntArray(int arrayImprimir[],int len)
 {
-	for(int i=0;i<len;i++)
+	if(arrayImprimir!=NULL&&len>=0)
 	{
-		printf("indice %d, valor %d\n\n",i+1,array[i]);
-	}
+		for(int i=0;i<len;i++)
+		{
+			printf("indice %d, valor %d\n\n",i,arrayImprimir[i]);
+		}
 
+	}
 }
 void viltrarParArray(int array [],int len)
 {

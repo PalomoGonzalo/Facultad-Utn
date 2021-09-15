@@ -16,7 +16,7 @@ int main(void) {
 	setbuf(stdout, NULL);
 	for(int i=0;i<5;i++)
 	{
-		getInt("ingrese numeros", &numeros[i]);
+		getInt("ingrese numeros\n", &numeros[i]);
 	}
 	imprimirIntArray(numeros, 5);
 	viltrarParArray(numeros,5);
