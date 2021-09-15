@@ -1,9 +1,38 @@
-21:52:38 **** Incremental Build of configuration Debug for project clase07 ****
+23:48:15 **** Incremental Build of configuration Debug for project funciones_genericas ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase07.o" "..\\src\\clase07.c" 
-gcc -o clase07.exe "src\\clase07.o" "src\\funciones.o" 
-Info: Nothing to build for clase07
-22:00:52 **** Incremental Build of configuration Debug for project clase07 ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones_genericas.o" "..\\src\\funciones_genericas.c" 
+gcc -o funciones_genericas.exe "src\\funciones.o" "src\\funciones_genericas.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file funciones_genericas.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:48:27 **** Incremental Build of configuration Debug for project funciones_genericas ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase07.o" "..\\src\\clase07.c" 
-gcc -o clase07.exe "src\\clase07.o" "src\\funciones.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones_genericas.o" "..\\src\\funciones_genericas.c" 
+gcc -o funciones_genericas.exe "src\\funciones.o" "src\\funciones_genericas.o" 
+Info: Nothing to build for funciones_genericas
+23:48:57 **** Incremental Build of configuration Debug for project funciones_genericas ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getChar':
+..\src\funciones.c:12:14: warning: format '%f' expects argument of type 'double', but argument 2 has type 'char *' [-Wformat=]
+   12 |     printf("%f", mensaje);
+      |             ~^   ~~~~~~~
+      |              |   |
+      |              |   char *
+      |              double
+      |             %s
+..\src\funciones.c:14:13: warning: format '%f' expects argument of type 'float *', but argument 2 has type 'char **' [-Wformat=]
+   14 |     scanf("%f", &auxiliarChar);
+      |            ~^   ~~~~~~~~~~~~~
+      |             |   |
+      |             |   char **
+      |             float *
+..\src\funciones.c:15:12: warning: returning 'char *' from a function with return type 'char' makes integer from pointer without a cast [-Wint-conversion]
+   15 |     return auxiliarChar;
+      |            ^~~~~~~~~~~~
+gcc -o funciones_genericas.exe "src\\funciones.o" "src\\funciones_genericas.o" 
+Info: Nothing to build for funciones_genericas
+Info: Nothing to build for funciones_genericas
+Info: Nothing to build for funciones_genericas
+Info: Nothing to build for funciones_genericas
+Info: Nothing to build for funciones_genericas
+Info: Nothing to build for funciones_genericas

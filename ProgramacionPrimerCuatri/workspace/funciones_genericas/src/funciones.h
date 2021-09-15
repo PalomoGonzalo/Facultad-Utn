@@ -16,8 +16,10 @@ int inicializadorArrayFloat( float array[],int len,int valorInicial);
 int inicializadorArrayInt( float array[],int len,int valorInicial);
 void imprimirIntArray(int arrayImprimir[],int len);
 int filtrarParArray(int arrayPar [],int len);
-int pedirFloatInt(float arrayFloat[],int len);
+int pedirFloatInt(int arrayFloat[],int len);
 int pedirFloatArray(float arrayFloat[],int len);
+int pedirMensajeParaOrdenerArrays();
+int ordenarArrayIntSegunCriterio(int arrayParaOrdenar[], int len);
 
 
 #endif /* FUNCIONES_H_ */
