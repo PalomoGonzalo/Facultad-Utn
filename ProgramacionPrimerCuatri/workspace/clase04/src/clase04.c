@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define REINTENTOS 3
 
 int pedirFloatAlUsuario(float* pNum,float min,float max,int reintentos,char* variableTexto,char* mensajeError);
@@ -26,7 +27,6 @@ int main(void) {
 	{
 		printf("ese numero nooo");
 	}
-
 
 
 
