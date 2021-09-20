@@ -15,9 +15,18 @@
 int main(void) {
 	setbuf(stdout, NULL);
 	int aux;
+	char *auxChar[500];
 	getInt("ingrese edad",&aux);
 
-	printf("\nLa edad es %d",aux);
+	printf("\nstring es %d\n",aux);
+	getString("\ningrise un string",auxChar);
+	puts(*auxChar);
+
+
+	for(int i=0;i<strlen(*auxChar);i++)
+	{
+		printf("%c\n",*auxChar[i]);
+	}
 
 
 

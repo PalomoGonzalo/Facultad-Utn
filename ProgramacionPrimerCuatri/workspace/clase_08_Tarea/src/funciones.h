@@ -27,6 +27,6 @@ int ordenarArrayIntSegunCriterio(int arrayParaOrdenar[], int len);
 int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 int esNumerico(char str[]);
 int esSoloLetras(char str[]);
-
+int getString(char cadena[],char * retorno[]);
 
 #endif /* FUNCIONES_H_ */

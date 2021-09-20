@@ -240,7 +240,7 @@ int esNumerico(char str[])
 	   while(str[i] != '\0')
 	   {
 	       if(str[i] < '0' || str[i] > '9')
-	           return 0;
+	           retorno= 0;
 	       i++;
 	   }
 	 retorno=1;
@@ -260,25 +260,56 @@ int esSoloLetras(char str[])
 }
 char pedirMensaje (char mensaje[], char auxiliarChar[])
 {
+
     printf("%s",mensaje);
     gets(auxiliarChar);
     fflush(stdin);
     return *auxiliarChar;
 }
 
-int getInt(char *cadena,int* aux)
+int getInt(char *mensaje,int* resultado)
  {
 	int retorno=-1;
 	int auxRetorno;
 	char auxiliarChar[500];
-	pedirMensaje(cadena, auxiliarChar);
+	if(resultado !=NULL)
+	{
+
+	pedirMensaje(mensaje, auxiliarChar);
 	auxRetorno=esNumerico(auxiliarChar);
 	while (!auxRetorno)
 	{
+
 		pedirMensaje("error reingrese solo numeros", auxiliarChar);
 		auxRetorno=esNumerico(auxiliarChar);
+		   fflush(stdin);
+	}
 	}
 	retorno=1;
-	 *aux= atoi(auxiliarChar);
+	 *resultado= atoi(auxiliarChar);
 	return retorno;
 }
+
+int getString(char cadena[],char *retorno[])
+{
+
+	int contador;
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esSoloLetras(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(*retorno,auxiliarChar);
+
+	return contador;
+	//return *retorno;
+}
+
+
+
+
+
+
+
