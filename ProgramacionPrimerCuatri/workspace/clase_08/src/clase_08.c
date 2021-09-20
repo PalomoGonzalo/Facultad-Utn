@@ -34,7 +34,7 @@ int main(void) {
 
 	int len;
 	char cadenaUno[30]="test";
-	char cadenaDos[20]="reemplazado";
+	char cadenaDos[20]="rseeemplazado";
 	len=myStrLen(cadenaUno);
 	printf("%d\n",len);
 
@@ -86,8 +86,5 @@ void myStrCpy(char cadenaUno[],char cadenaDos[])
 		}
 
 	}
-
-
-
 }
 

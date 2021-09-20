@@ -29,19 +29,7 @@ int myGets(char* cadena, int longitud)
 	}
 	return retorno;
 }
-int getInt(int* pResultado, char bufferString[])
-{
-    int retorno=-1;
-    if(	pResultado != NULL &&
-    	myGets(bufferString,sizeof(bufferString)) == 0 &&
-    	esNumerica(bufferString))
-	{
-		retorno=0;
-		*pResultado = atoi(bufferString) ;
 
-	}
-    return retorno;
-}
 int getFloat(float* numeros,char* mensaje)
 {
 	int flag=1;
@@ -218,21 +206,79 @@ int max(int num1, int num2)
       result = num2;
    return result;
 }
-int esNumerica(char str[]) {
-	int retorno = 1;
-	int i = 0;
-	if (str[i] == '-')
+
+
+/*int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos)
+{
+	int retorno = -1;
+	int bufferInt;
+	do
 	{
-		i = 1;
-
-	}
-	for ( ; str != '\0'; i++) {
-		if (str[i] > '0' || str[i] < '9')
+		printf("%s",mensaje);
+		if(	getInt(&bufferInt,mensaje) == 0 &&
+			bufferInt >= minimo &&
+			bufferInt <= maximo)
 		{
+			retorno = 0;
+			*pResultado = bufferInt;
 			break;
-			retorno = -1;
 		}
+		printf("%s",mensajeError);
+		reintentos--;
+	}while(reintentos>=0);
 
+	return retorno;
+}*/
+int esNumerico(char str[])
+{
+	int retorno=1;
+	 int i=0;
+	 if (str[i] == '-')
+	 	{
+	 		i = 1;
+	 	}
+	   while(str[i] != '\0')
+	   {
+	       if(str[i] < '0' || str[i] > '9')
+	           return 0;
+	       i++;
+	   }
+	 retorno=1;
+	   return retorno;
+
+}
+int esSoloLetras(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+           return 0;
+       i++;
+   }
+   return 1;
+}
+char pedirMensaje (char mensaje[], char auxiliarChar[])
+{
+    printf("%s",mensaje);
+    gets(auxiliarChar);
+    fflush(stdin);
+    return *auxiliarChar;
+}
+
+int getInt(char *cadena,int* aux)
+ {
+	int retorno=-1;
+	int auxRetorno;
+	char auxiliarChar[500];
+	pedirMensaje(cadena, auxiliarChar);
+	auxRetorno=esNumerico(auxiliarChar);
+	while (!auxRetorno)
+	{
+		pedirMensaje("error reingrese solo numeros", auxiliarChar);
+		auxRetorno=esNumerico(auxiliarChar);
 	}
+	retorno=1;
+	 *aux= atoi(auxiliarChar);
 	return retorno;
 }
