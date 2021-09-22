@@ -258,6 +258,18 @@ int esSoloLetras(char str[])
    }
    return 1;
 }
+int esAlfaNumerico(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+           return 0;
+       i++;
+   }
+   return 1;
+}
+
 char pedirMensaje (char mensaje[], char auxiliarChar[])
 {
 
@@ -267,6 +279,22 @@ char pedirMensaje (char mensaje[], char auxiliarChar[])
     return *auxiliarChar;
 }
 
+char getAlfaNumerico(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esAlfaNumerico(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strncpy(retorno,auxiliarChar,sizeof(retorno));
+
+	return *retorno;
+
+}
 int getInt(char *mensaje,int* resultado)
  {
 	int retorno=-1;
@@ -289,8 +317,99 @@ int getInt(char *mensaje,int* resultado)
 	 *resultado= atoi(auxiliarChar);
 	return retorno;
 }
+char getString(char cadena[],char *retorno)
+{
 
-int getString(char cadena[],char *retorno[])
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esSoloLetras(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strncpy(retorno,auxiliarChar,sizeof(retorno));
+
+	return *retorno;
+	//return *retorno;
+}
+
+
+int esTelefono(char str[])
+{
+   int i=0;
+   int contadorGuiones=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
+           return 0;
+       if(str[i] == '-')
+            contadorGuiones++;
+       i++;
+   }
+   if(contadorGuiones==1) // debe tener un guion
+        return 1;
+
+    return 0;
+}
+
+int esEmail(char str[])
+{
+   int i=0;
+   int contadorArrobas=0;
+   int contadorDePuntos=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] == '@') && (str[i] < '0' || str[i] > '9')&&(str[i]=='.'))
+           return 0;
+       if(str[i] == '@')
+            contadorArrobas++;
+       if(str[i] == '.')
+    	   contadorDePuntos++;
+
+       i++;
+
+   }
+   if(contadorArrobas==1&&contadorDePuntos==1) // debe tener un punto y arroba
+        return 1;
+
+    return 0;
+}
+char getEmail(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esEmail(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(retorno,auxiliarChar);
+
+	return *retorno;
+	//return *retorno;
+}
+
+char getTelefono(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esTelefono(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(retorno,auxiliarChar);
+
+	return *retorno;
+	//return *retorno;
+}
+
+/*int getString(char cadena[],char *retorno[])
 {
 
 	int contador;
@@ -308,8 +427,5 @@ int getString(char cadena[],char *retorno[])
 }
 
 
-
-
-
-
+*/
 

@@ -1,59 +1,183 @@
-23:35:57 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Nothing to build for clase_08_Tarea
+Info: Nothing to build for clase_08_Tarea
+00:04:22 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
-..\src\clase_08_Tarea.c: In function 'main':
-..\src\clase_08_Tarea.c:28:12: warning: format '%c' expects argument of type 'int', but argument 2 has type 'char *' [-Wformat=]
-   28 |   printf("%c\n",auxChar[i]);
-      |           ~^    ~~~~~~~~~~
-      |            |           |
-      |            int         char *
-      |           %s
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:05:51 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
 Info: Nothing to build for clase_08_Tarea
-23:41:46 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+00:07:28 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
 ..\src\funciones.c: In function 'getString':
-..\src\funciones.c:306:9: warning: 'contador' is used uninitialized in this function [-Wuninitialized]
-  306 |  return contador;
-      |         ^~~~~~~~
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
+..\src\clase_08_Tarea.c: In function 'main':
+..\src\clase_08_Tarea.c:22:2: warning: implicit declaration of function 'getTelefono'; did you mean 'esTelefono'? [-Wimplicit-function-declaration]
+   22 |  getTelefono("\ningrise un string",auxChar);
+      |  ^~~~~~~~~~~
+      |  esTelefono
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
-23:42:20 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+00:09:47 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'esEmail':
+..\src\funciones.c:363:60: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+  363 |        if((str[i] != ' ') && (str[i] != '@'||(str[i]=='.') && (str[i] < '0' || str[i] > '9'))
+      |                                              ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\funciones.c:363:94: error: expected ')' before 'return'
+  363 |        if((str[i] != ' ') && (str[i] != '@'||(str[i]=='.') && (str[i] < '0' || str[i] > '9'))
+      |          ~                                                                                   ^
+      |                                                                                              )
+  364 |            return 0;
+      |            ~~~~~~                                                                             
+..\src\funciones.c:371:4: error: expected expression before '}' token
+  371 |    }
+      |    ^
+00:10:47 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:11:02 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:11:54 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:12:22 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:12:50 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:14:11 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+00:14:25 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
 ..\src\clase_08_Tarea.c: In function 'main':
-..\src\clase_08_Tarea.c:28:12: warning: format '%c' expects argument of type 'int', but argument 2 has type 'char *' [-Wformat=]
-   28 |   printf("%c\n",auxChar[i]);
-      |           ~^    ~~~~~~~~~~
-      |            |           |
-      |            int         char *
-      |           %s
+..\src\clase_08_Tarea.c:22:2: warning: implicit declaration of function 'getTelefono'; did you mean 'esTelefono'? [-Wimplicit-function-declaration]
+   22 |  getTelefono("\ningrise un string",auxChar);
+      |  ^~~~~~~~~~~
+      |  esTelefono
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
-23:42:30 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+00:15:44 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
+Info: Nothing to build for clase_08_Tarea
+00:16:02 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
-23:42:41 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+00:16:58 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
-..\src\clase_08_Tarea.c: In function 'main':
-..\src\clase_08_Tarea.c:26:23: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
-   26 |  for(int i=0;i<strlen(auxChar);i++)
-      |                       ^~~~~~~
-      |                       |
-      |                       char **
-In file included from ..\src\funciones.h:9,
-                 from ..\src\clase_08_Tarea.c:13:
-c:\mingw\include\string.h:83:49: note: expected 'const char *' but argument is of type 'char **'
-   83 | _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
-      |                                                 ^~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
-23:43:12 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
+00:18:33 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
-gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 
-23:43:29 **** Incremental Build of configuration Debug for project clase_08_Tarea ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_08_Tarea.o" "..\\src\\clase_08_Tarea.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+..\src\funciones.c: In function 'getAlfaNumerico':
+..\src\funciones.c:293:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  293 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
+..\src\funciones.c: In function 'getString':
+..\src\funciones.c:331:37: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+  331 |  strncpy(retorno,auxiliarChar,sizeof(retorno));
+      |                                     ^
 gcc -o clase_08_Tarea.exe "src\\clase_08_Tarea.o" "src\\funciones.o" 

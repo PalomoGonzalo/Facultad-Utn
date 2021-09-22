@@ -27,6 +27,12 @@ int ordenarArrayIntSegunCriterio(int arrayParaOrdenar[], int len);
 int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 int esNumerico(char str[]);
 int esSoloLetras(char str[]);
-int getString(char cadena[],char * retorno[]);
+int esAlfaNumerico(char str[]);
+char getString(char cadena[],char retorno[]);
+char getAlfaNumerico(char cadena[],char *retorno);
+int esTelefono(char str[]);
+int esEmail(char str[]);
+char getEmail(char cadena[],char *retorno);
+//int getString(char cadena[],char *retorno[]);
 
 #endif /* FUNCIONES_H_ */

@@ -14,12 +14,22 @@
 
 int main(void) {
 	setbuf(stdout, NULL);
-	int aux;
-	char *auxChar[500];
-	getInt("ingrese edad",&aux);
+	//int aux;
+	char auxChar[500];
+	//getInt("ingrese edad",&aux);
 
-	printf("\nstring es %d\n",aux);
-	getString("\ningrise un string",auxChar);
+	//printf("\nstring es %d\n",aux);
+	getEmail("\ningrise un string",auxChar);
+	puts(auxChar);
+
+
+	for(int i=0;i<strlen(auxChar);i++)
+	{
+		printf("%c\n",auxChar[i]);
+	}
+
+
+	/*	getString("\ningrise un string",auxChar);
 	puts(*auxChar);
 
 
@@ -27,9 +37,7 @@ int main(void) {
 	{
 		printf("%c\n",*auxChar[i]);
 	}
-
-
-
+*/
 	/*int edad;
 
 		if(utn_getNumero(&edad, "\nEdad? ","\nError", 0,200,2) == 0)

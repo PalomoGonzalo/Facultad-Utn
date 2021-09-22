@@ -6,22 +6,30 @@
  *      setbuf(stdout, NULL);
  */
 #include "funciones.h"
-char getChar (char mensaje[], char auxiliarChar[])
+int myGets(char* cadena, int longitud)
 {
+	int retorno=-1;
+	char bufferString[4000];
 
-    printf("%f", mensaje);
-    fflush(stdin);
-    scanf("%f", &auxiliarChar);
-    return auxiliarChar;
+	if(cadena != NULL && longitud > 0)
+	{
+		fflush(stdin);
+		if(fgets(bufferString,sizeof(bufferString),stdin) != NULL)
+		{
+			if(bufferString[strnlen(bufferString,sizeof(bufferString))-1] == '\n')
+			{
+				bufferString[strnlen(bufferString,sizeof(bufferString))-1] = '\0';
+			}
+			if(strnlen(bufferString,sizeof(bufferString)) <= longitud)
+			{
+				strncpy(cadena,bufferString,longitud);
+				retorno=0;
+			}
+		}
+	}
+	return retorno;
 }
-int getInt (char mensaje[],int* numeros)
-{
-	int flag=1;
-	printf(mensaje);
-	fflush(stdin);
-	scanf("%d",numeros);
-	return flag;
-}
+
 int getFloat(float* numeros,char* mensaje)
 {
 	int flag=1;
@@ -187,4 +195,237 @@ int pedirMensajeParaOrdenerArrays()
 	return retorno;
 }
 
+int max(int num1, int num2)
+{
+   int result;
+   if (num1 > num2)
+      {
+	   result = num1;
+      }
+   else
+      result = num2;
+   return result;
+}
+
+
+/*int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos)
+{
+	int retorno = -1;
+	int bufferInt;
+	do
+	{
+		printf("%s",mensaje);
+		if(	getInt(&bufferInt,mensaje) == 0 &&
+			bufferInt >= minimo &&
+			bufferInt <= maximo)
+		{
+			retorno = 0;
+			*pResultado = bufferInt;
+			break;
+		}
+		printf("%s",mensajeError);
+		reintentos--;
+	}while(reintentos>=0);
+
+	return retorno;
+}*/
+int esNumerico(char str[])
+{
+	int retorno=1;
+	 int i=0;
+	 if (str[i] == '-')
+	 	{
+	 		i = 1;
+	 	}
+	   while(str[i] != '\0')
+	   {
+	       if(str[i] < '0' || str[i] > '9')
+	           retorno= 0;
+	       i++;
+	   }
+	 retorno=1;
+	   return retorno;
+
+}
+int esSoloLetras(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+           return 0;
+       i++;
+   }
+   return 1;
+}
+int esAlfaNumerico(char str[])
+{
+   int i=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+           return 0;
+       i++;
+   }
+   return 1;
+}
+
+char pedirMensaje (char mensaje[], char auxiliarChar[])
+{
+
+    printf("%s",mensaje);
+    gets(auxiliarChar);
+    fflush(stdin);
+    return *auxiliarChar;
+}
+
+char getAlfaNumerico(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esAlfaNumerico(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strncpy(retorno,auxiliarChar,sizeof(retorno));
+
+	return *retorno;
+
+}
+int getInt(char *mensaje,int* resultado)
+ {
+	int retorno=-1;
+	int auxRetorno;
+	char auxiliarChar[500];
+	if(resultado !=NULL)
+	{
+
+	pedirMensaje(mensaje, auxiliarChar);
+	auxRetorno=esNumerico(auxiliarChar);
+	while (!auxRetorno)
+	{
+
+		pedirMensaje("error reingrese solo numeros", auxiliarChar);
+		auxRetorno=esNumerico(auxiliarChar);
+		   fflush(stdin);
+	}
+	}
+	retorno=1;
+	 *resultado= atoi(auxiliarChar);
+	return retorno;
+}
+char getString(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esSoloLetras(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strncpy(retorno,auxiliarChar,sizeof(retorno));
+
+	return *retorno;
+	//return *retorno;
+}
+
+
+int esTelefono(char str[])
+{
+   int i=0;
+   int contadorGuiones=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
+           return 0;
+       if(str[i] == '-')
+            contadorGuiones++;
+       i++;
+   }
+   if(contadorGuiones==1) // debe tener un guion
+        return 1;
+
+    return 0;
+}
+
+int esEmail(char str[])
+{
+   int i=0;
+   int contadorArrobas=0;
+   int contadorDePuntos=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] == '@') && (str[i] < '0' || str[i] > '9')&&(str[i]=='.'))
+           return 0;
+       if(str[i] == '@')
+            contadorArrobas++;
+       if(str[i] == '.')
+    	   contadorDePuntos++;
+
+       i++;
+
+   }
+   if(contadorArrobas==1&&contadorDePuntos==1) // debe tener un punto y arroba
+        return 1;
+
+    return 0;
+}
+char getEmail(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esEmail(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(retorno,auxiliarChar);
+
+	return *retorno;
+	//return *retorno;
+}
+
+char getTelefono(char cadena[],char *retorno)
+{
+
+
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esTelefono(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(retorno,auxiliarChar);
+
+	return *retorno;
+	//return *retorno;
+}
+
+/*int getString(char cadena[],char *retorno[])
+{
+
+	int contador;
+	char auxiliarChar[500];
+
+	pedirMensaje(cadena, auxiliarChar);
+	while(!esSoloLetras(auxiliarChar))
+	{
+		pedirMensaje(" error solo letras", auxiliarChar);
+	}
+	strcpy(*retorno,auxiliarChar);
+
+	return contador;
+	//return *retorno;
+}
+
+
+*/
 
