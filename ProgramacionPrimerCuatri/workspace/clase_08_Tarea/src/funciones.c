@@ -229,6 +229,7 @@ int max(int num1, int num2)
 
 	return retorno;
 }*/
+
 int esNumerico(char str[])
 {
 	int retorno=1;
@@ -303,18 +304,19 @@ int getInt(char *mensaje,int* resultado)
 	if(resultado !=NULL)
 	{
 
-	pedirMensaje(mensaje, auxiliarChar);
-	auxRetorno=esNumerico(auxiliarChar);
-	while (!auxRetorno)
-	{
-
-		pedirMensaje("error reingrese solo numeros", auxiliarChar);
+		pedirMensaje(mensaje, auxiliarChar);
 		auxRetorno=esNumerico(auxiliarChar);
-		   fflush(stdin);
-	}
+		while (!auxRetorno)
+		{
+
+			pedirMensaje("error reingrese solo numeros", auxiliarChar);
+			auxRetorno=esNumerico(auxiliarChar);
+			   fflush(stdin);
+		}
 	}
 	retorno=1;
-	 *resultado= atoi(auxiliarChar);
+	*resultado= atoi(auxiliarChar);
+
 	return retorno;
 }
 char getString(char cadena[],char *retorno)
@@ -360,7 +362,7 @@ int esEmail(char str[])
    int contadorDePuntos=0;
    while(str[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] == '@') && (str[i] < '0' || str[i] > '9')&&(str[i]=='.'))
+       if((str[i] == ' ') && (str[i] != '@') && (str[i] < '0' || str[i] > '9')&&(str[i]!='.'))
            return 0;
        if(str[i] == '@')
             contadorArrobas++;
