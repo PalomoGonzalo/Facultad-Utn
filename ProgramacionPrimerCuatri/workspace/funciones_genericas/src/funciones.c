@@ -5,39 +5,28 @@
  *      Author: palom
  *      setbuf(stdout, NULL);
  */
+static int myGets(char pResultado[], int len);
 #include "funciones.h"
-int myGets(char* cadena, int longitud)
-{
-	int retorno=-1;
-	char bufferString[4000];
 
-	if(cadena != NULL && longitud > 0)
-	{
-		fflush(stdin);
-		if(fgets(bufferString,sizeof(bufferString),stdin) != NULL)
-		{
-			if(bufferString[strnlen(bufferString,sizeof(bufferString))-1] == '\n')
-			{
-				bufferString[strnlen(bufferString,sizeof(bufferString))-1] = '\0';
-			}
-			if(strnlen(bufferString,sizeof(bufferString)) <= longitud)
-			{
-				strncpy(cadena,bufferString,longitud);
-				retorno=0;
-			}
-		}
-	}
-	return retorno;
+static int myGets(char pResultado[], int len)
+{
+    int retorno=-1;
+    int indexFinal;
+    fflush(stdin);
+    if(fgets(pResultado,len,stdin)!=NULL)
+    {
+        indexFinal = strlen(pResultado)-1;
+        if(pResultado[indexFinal] == '\n')
+        {
+            pResultado[indexFinal] = '\0';
+        }
+        retorno = 0;
+
+    }
+    return retorno;
 }
 
-int getFloat(float* numeros,char* mensaje)
-{
-	int flag=1;
-	printf(mensaje);
-	fflush(stdin);
-	scanf("%f",numeros);
-	return flag;
-}
+
 
 int inicializadorArrayFloat( float array[],int len,int valorInicial)
 {
@@ -231,7 +220,7 @@ int max(int num1, int num2)
 }*/
 int esNumerico(char str[])
 {
-	int retorno=1;
+
 	 int i=0;
 	 if (str[i] == '-')
 	 	{
@@ -240,11 +229,34 @@ int esNumerico(char str[])
 	   while(str[i] != '\0')
 	   {
 	       if(str[i] < '0' || str[i] > '9')
-	           retorno= 0;
+	           return 0;
 	       i++;
 	   }
-	 retorno=1;
-	   return retorno;
+
+	   return 1;
+
+}
+int esNumericoFlotante(char str[])
+{
+
+	 int i=0;
+	 int contadorDePuntos=0;
+	 if (str[i] == '-')
+	 	{
+	 		i = 1;
+	 	}
+	   while(str[i] != '\0')
+	   {
+	       if((str[i] < '0' || str[i] > '9')&& str[i]!='.')
+	           return 0;
+	       if(str[i]=='.')
+	    	   contadorDePuntos++;
+	       i++;
+	   }
+	 if(contadorDePuntos==1)
+		 return 1;
+
+	   return 0;
 
 }
 int esSoloLetras(char str[])
@@ -270,51 +282,81 @@ int esAlfaNumerico(char str[])
    return 1;
 }
 
-char pedirMensaje (char mensaje[], char auxiliarChar[])
+int pedirMensaje (char pResultado[], int len,char mensaje[])
 {
 
-    printf("%s",mensaje);
-    gets(auxiliarChar);
-    fflush(stdin);
-    return *auxiliarChar;
+	int retorno = -1;
+
+	if (pResultado != NULL && mensaje != NULL)
+	{
+		printf("%s", mensaje);
+		fflush(stdin);
+		if (fgets(pResultado, len, stdin) != NULL)
+		{
+			retorno = 0;
+		}
+	}
+	return retorno;
 }
 
 char getAlfaNumerico(char cadena[],char *retorno)
 {
 
-
 	char auxiliarChar[500];
-
-	pedirMensaje(cadena, auxiliarChar);
-	while(!esAlfaNumerico(auxiliarChar))
+	printf(cadena);
+	if (myGets(auxiliarChar, sizeof(auxiliarChar)) == 0)
 	{
-		pedirMensaje(" error solo letras", auxiliarChar);
+		while (!esSoloLetras(auxiliarChar))
+		{
+			printf("error ingrese solo alfaNumerico ");
+			myGets(auxiliarChar, sizeof(auxiliarChar));
+		}
 	}
-	strncpy(retorno,auxiliarChar,sizeof(retorno));
+	strcpy(retorno, auxiliarChar);
 
 	return *retorno;
 
 }
-int getInt(char *mensaje,int* resultado)
+int getFloat(char *mensaje,float* resultado)
  {
 	int retorno=-1;
-	int auxRetorno;
-	char auxiliarChar[500];
+	char auxiliarChar[50];
 	if(resultado !=NULL)
 	{
 
-	pedirMensaje(mensaje, auxiliarChar);
-	auxRetorno=esNumerico(auxiliarChar);
-	while (!auxRetorno)
+	printf(mensaje);
+	myGets(auxiliarChar,sizeof(auxiliarChar));
+	while (!esNumericoFlotante(auxiliarChar))
 	{
 
-		pedirMensaje("error reingrese solo numeros", auxiliarChar);
-		auxRetorno=esNumerico(auxiliarChar);
-		   fflush(stdin);
+		printf("error reingrese ");
+		myGets(auxiliarChar,sizeof(auxiliarChar));
 	}
 	}
 	retorno=1;
-	 *resultado= atoi(auxiliarChar);
+	*resultado= atof(auxiliarChar);
+
+	return retorno;
+}
+int getInt(char *mensaje,int* resultado)
+ {
+	int retorno=-1;
+	char auxiliarChar[50];
+	if(resultado !=NULL)
+	{
+
+	printf(mensaje);
+	myGets(auxiliarChar,sizeof(auxiliarChar));
+	while (!esNumerico(auxiliarChar))
+	{
+
+		printf("error reingrese ");
+		myGets(auxiliarChar,sizeof(auxiliarChar));
+	}
+	}
+	retorno=1;
+	*resultado= atoi(auxiliarChar);
+
 	return retorno;
 }
 char getString(char cadena[],char *retorno)
@@ -322,16 +364,18 @@ char getString(char cadena[],char *retorno)
 
 
 	char auxiliarChar[500];
+		printf(cadena);
+		if(myGets(auxiliarChar, sizeof(auxiliarChar))==0)
+		{
+			while(!esSoloLetras(auxiliarChar))
+			{
+				printf("error ingrese un mail valido");
+				myGets(auxiliarChar, sizeof(auxiliarChar));
+			}
+		}
+		strcpy(retorno,auxiliarChar);
 
-	pedirMensaje(cadena, auxiliarChar);
-	while(!esSoloLetras(auxiliarChar))
-	{
-		pedirMensaje(" error solo letras", auxiliarChar);
-	}
-	strncpy(retorno,auxiliarChar,sizeof(retorno));
-
-	return *retorno;
-	//return *retorno;
+		return *retorno;
 }
 
 
@@ -380,16 +424,19 @@ char getEmail(char cadena[],char *retorno)
 
 
 	char auxiliarChar[500];
-
-	pedirMensaje(cadena, auxiliarChar);
-	while(!esEmail(auxiliarChar))
+	printf(cadena);
+	if(myGets(auxiliarChar, sizeof(auxiliarChar))==0)
 	{
-		pedirMensaje(" error solo letras", auxiliarChar);
+		while(!esEmail(auxiliarChar))
+		{
+			printf("error ingrese un mail valido");
+			myGets(auxiliarChar, sizeof(auxiliarChar));
+		}
 	}
 	strcpy(retorno,auxiliarChar);
 
 	return *retorno;
-	//return *retorno;
+
 }
 
 char getTelefono(char cadena[],char *retorno)
@@ -397,16 +444,18 @@ char getTelefono(char cadena[],char *retorno)
 
 
 	char auxiliarChar[500];
-
-	pedirMensaje(cadena, auxiliarChar);
-	while(!esTelefono(auxiliarChar))
+	printf(cadena);
+	if(myGets(auxiliarChar, sizeof(auxiliarChar))==0)
 	{
-		pedirMensaje(" error solo letras", auxiliarChar);
+		while(!esTelefono(auxiliarChar))
+		{
+			printf("error ingrese un mail valido");
+			myGets(auxiliarChar, sizeof(auxiliarChar));
+		}
 	}
 	strcpy(retorno,auxiliarChar);
 
 	return *retorno;
-	//return *retorno;
 }
 
 /*int getString(char cadena[],char *retorno[])

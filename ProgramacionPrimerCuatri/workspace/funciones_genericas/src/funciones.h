@@ -12,8 +12,7 @@
 #define FUNCIONES_H_
 int myGets(char* cadena, int longitud);
 int getInt(char *cadena,int* aux);
-int getFloat(float* numeros,char* mensaje);
-char pedirMensaje (char mensaje[], char auxiliarChar[]);
+int pedirMensaje (char pResultado[], int len,char mensaje[]);
 int max(int num1, int num2);
 void imprimirFloatArray(float array[],int len);
 int inicializadorArrayFloat( float array[],int len,int valorInicial);
@@ -33,6 +32,8 @@ char getAlfaNumerico(char cadena[],char *retorno);
 int esTelefono(char str[]);
 int esEmail(char str[]);
 char getEmail(char cadena[],char *retorno);
+int getFloat(char *mensaje,float* resultado);
+int esNumericoFlotante(char str[]);
 //int getString(char cadena[],char *retorno[]);
 
 #endif /* FUNCIONES_H_ */

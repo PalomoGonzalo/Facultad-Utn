@@ -13,8 +13,14 @@
 #include "funciones.h"
 int main(void) {
 	setbuf(stdout,NULL);
-	int numeros[5]={22,33,1,2,6};
+	float numeros;
+	char text[50];
+	getFloat("ingrese solo numeros\n", &numeros);
+	//pedirMensaje(text, sizeof(text), "ingrese algo");
+	printf("%f",numeros);
+	//getEmail("ingrese email", text);
+	//puts(text);
 
-	ordenarArrayIntSegunCriterio(numeros, 5);
+
 	return EXIT_SUCCESS;
 }

@@ -1,11 +1,9 @@
-21:54:01 **** Rebuild of configuration Debug for project clase_09_estructuras ****
+23:42:10 **** Incremental Build of configuration Debug for project funciones_genericas ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_09_estructuras.o" "..\\src\\clase_09_estructuras.c" 
-..\src\clase_09_estructuras.c: In function 'main':
-..\src\clase_09_estructuras.c:20:7: warning: unused variable 'cadena' [-Wunused-variable]
-   20 |  char cadena[8];
-      |       ^~~~~~
-..\src\clase_09_estructuras.c:25:2: warning: 'numero' is used uninitialized in this function [-Wuninitialized]
-   25 |  printf("%d",numero);
-      |  ^~~~~~~~~~~~~~~~~~~
-gcc -o clase_09_estructuras.exe "src\\clase_09_estructuras.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones_genericas.o" "..\\src\\funciones_genericas.c" 
+..\src\funciones_genericas.c: In function 'main':
+..\src\funciones_genericas.c:17:7: warning: unused variable 'text' [-Wunused-variable]
+   17 |  char text[50];
+      |       ^~~~
+gcc -o funciones_genericas.exe "src\\funciones.o" "src\\funciones_genericas.o" 
+Info: Nothing to build for funciones_genericas
