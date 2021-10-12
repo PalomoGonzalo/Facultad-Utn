@@ -1,7 +1,4 @@
-19:54:14 **** Rebuild of configuration Debug for project trianguloEscaleno ****
+20:05:14 **** Incremental Build of configuration Debug for project clase_11_pantalla_testParcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\trianguloEscaleno.o" "..\\src\\trianguloEscaleno.c" 
-..\src\trianguloEscaleno.c:13:10: fatal error: triangulo.h: No such file or directory
-   13 | #include "triangulo.h"
-      |          ^~~~~~~~~~~~~
-compilation terminated.
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\contrataciones.o" "..\\src\\contrataciones.c" 
+gcc -o clase_11_pantalla_testParcial.exe "src\\clase_11_pantalla_testParcial.o" "src\\contrataciones.o" "src\\funciones.o" "src\\pantalla.o" 

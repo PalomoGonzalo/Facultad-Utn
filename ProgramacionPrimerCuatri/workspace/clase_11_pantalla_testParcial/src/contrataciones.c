@@ -83,7 +83,7 @@ int contra_loadDisplay( Contrataciones list[],int len)
 	int indice;
 	if (len!=0&&list!=NULL)
 	{
-		indice=disp_buscarLibre(list, len);
+		indice=contra_buscarLibre(list, len);
 		if(indice>=0)
 		{
 			/*utn_getInt(&list[indice].type, "ingrese 0 para lcd \ningrese 1 para led\n ", "error reingrese 0 para lcd \ningrese 1 para led\n ", 0, 1, 100);
@@ -110,14 +110,14 @@ int contra_modifica(Contrataciones list[],int len)
 	int indice;
 //	int auxContinuar=1;
 
-	mostrarStruct(list, len);
+	mostrarStructContra(list, len);
 	utn_getInt(&idAux, "ingrese el id a modificar \n", "error ingrese un numero\n", 1, len, 5);
-	indice=buscarIdStruct(list, len, idAux);
+	indice=buscarIdStructContra(list, len, idAux);
 	if (len!=0&&list!=NULL)
 	{
 			if(indice!=-1)
 			{
-				disp_menuModificar(list, len, indice);
+				contra_menuModificar(list, len, indice);
 				retorno=1;
 				indice=-1;
 			}
@@ -181,18 +181,18 @@ int contra_Baja(Contrataciones list[],int len)
 {
 	int auxId;
 	int retorno=0;
-	mostrarStruct(list, len);
+	mostrarStructContra(list, len);
 	int indice;
 	utn_getInt(&auxId, "ingrese el ide que quiere de dar de baja \n", "error ingrese un numero valido", 1, len, 4);
 
 	if (len!=0&&list!=NULL)
 	{
 
-			indice=buscarIdStruct(list, len, auxId);
+			indice=buscarIdStructContra(list, len, auxId);
 			if(indice!=-1)
 			{
 
-			disp_bajaMenu(list, len, indice);
+			contra_bajaMenu(list, len, indice);
 			retorno=1;
 
 			}
@@ -213,7 +213,7 @@ int contra_bajaMenu(Contrataciones list[],int len,int indice)
 
 	if (len!=0&&list!=NULL)
 	{
-		mostrarUno(list, indice);
+		mostrarUnoContra(list, indice);
 		utn_getInt(&auxBaja, "Aprete 1 para dar de baja 2 para cancelar", "error ingrese un numero valido", 1, 2, 3);
 
 		if (auxBaja==1)
