@@ -1,23 +1,20 @@
 /*
- * pantalla.c
+ * contrataciones.c
  *
- *  Created on: 30 sept. 2021
+ *  Created on: 12 oct. 2021
  *      Author: mati_
  */
-// 0 lcd 1 led
 #include <stdio.h>
 #include <stdlib.h>
-#include "pantalla.h"
-#include "funciones.h"
-
-int disp_initList( Display displaysList[],int len)
+#include "contrataciones.h"
+int contra_initList( Contrataciones list[],int len)
 {
 	int retorno =-1;
-	if(displaysList != NULL)
+	if(list != NULL)
 	{
 		for(int i=0;i<len;i++)
 		{
-			displaysList[i].flagEmpty=VACIO;
+			list[i].flagEmpty=VACIO;
 			retorno=1;
 
 		}
@@ -25,21 +22,21 @@ int disp_initList( Display displaysList[],int len)
 	return retorno;
 
 }
-int dameUnIdNuevo(void)
+int dameUnIdNuevoContra(void)
 {
 	static int contador=0;
 	contador++;
 	return contador;
 
 }
-int disp_buscarLibre(Display displaysList[],int len)
+int contra_buscarLibre(Contrataciones list[],int len)
 {
 
 	int i;
 	int indice=-1;
 	for(i=0; i<len; i++)
 	{
-		if(displaysList[i].flagEmpty==VACIO)
+		if(list[i].flagEmpty==VACIO)
 		{
 			indice=i;
 			break;
@@ -47,20 +44,20 @@ int disp_buscarLibre(Display displaysList[],int len)
 	}
 	return indice;
 }
-void mostrarStruct(Display mostrar [],int len)
+void mostrarStructContra(Contrataciones mostrar [],int len)
 {
     int i;
     for(i=0; i<len; i++)
     {
         if(mostrar[i].flagEmpty==OCUPADO)
         {
-            printf("Id:%d NOMBRE: %s PRECIO: %f DIRECCION: %s \n",mostrar[i].id,mostrar[i].name,mostrar[i].price,mostrar[i].addres);
+           // printf("Id:%d NOMBRE: %s PRECIO: %f DIRECCION: %s \n",mostrar[i].id,mostrar[i].name,mostrar[i].price,mostrar[i].addres);
 
         }
     }
 
 }
-int buscarIdStruct(Display listado[],int len, int id)
+int buscarIdStructContra(Contrataciones listado[],int len, int id)
 {
     int retorno = -1;
     int i;
@@ -80,47 +77,47 @@ int buscarIdStruct(Display listado[],int len, int id)
 }
 
 
-int disp_loadDisplay( Display displaysList[],int len)
+int contra_loadDisplay( Contrataciones list[],int len)
 {
 	int retorno=0;
 	int indice;
-	if (len!=0&&displaysList!=NULL)
+	if (len!=0&&list!=NULL)
 	{
-		indice=disp_buscarLibre(displaysList, len);
+		indice=disp_buscarLibre(list, len);
 		if(indice>=0)
 		{
-			utn_getInt(&displaysList[indice].type, "ingrese 0 para lcd \ningrese 1 para led\n ", "error reingrese 0 para lcd \ningrese 1 para led\n ", 0, 1, 100);
-			utn_getFloat(&displaysList[indice].price, "ingrese el precio", "error reingrese ", 1, 555555, 10);
-			getString("ingrese el nombre",displaysList[indice].name );
-			getString("ingrese la direccion",displaysList[indice].addres);
-			displaysList[indice].id=dameUnIdNuevo();
+			/*utn_getInt(&list[indice].type, "ingrese 0 para lcd \ningrese 1 para led\n ", "error reingrese 0 para lcd \ningrese 1 para led\n ", 0, 1, 100);
+			utn_getFloat(&list[indice].price, "ingrese el precio", "error reingrese ", 1, 555555, 10);
+			getString("ingrese el nombre",list[indice].name );
+			getString("ingrese la direccion",list[indice].addres);
+			list[indice].id=dameUnIdNuevo();
 			retorno =1;
-			displaysList[indice].flagEmpty=0;
+			list[indice].flagEmpty=0;*/
 		}
 	}
 
 
 	return retorno;
 }
-void mostrarUno(Display displaysList[],int indice)
+void mostrarUnoContra(Contrataciones list[],int indice)
 {
-	printf("Id:%d NOMBRE: %s PRECIO: %f DIRECCION: %s \n",displaysList[indice].id,displaysList[indice].name,displaysList[indice].price,displaysList[indice].addres);
+	//printf("Id:%d NOMBRE: %s PRECIO: %f DIRECCION: %s \n",list[indice].id,displaysList[indice].name,list[indice].price,list[indice].addres);
 }
-int disp_modifica(Display displaysList[],int len)
+int contra_modifica(Contrataciones list[],int len)
 {
 	int idAux;
 	int retorno=0;
 	int indice;
 //	int auxContinuar=1;
 
-	mostrarStruct(displaysList, len);
+	mostrarStruct(list, len);
 	utn_getInt(&idAux, "ingrese el id a modificar \n", "error ingrese un numero\n", 1, len, 5);
-	indice=buscarIdStruct(displaysList, len, idAux);
-	if (len!=0&&displaysList!=NULL)
+	indice=buscarIdStruct(list, len, idAux);
+	if (len!=0&&list!=NULL)
 	{
 			if(indice!=-1)
 			{
-				disp_menuModificar(displaysList, len, indice);
+				disp_menuModificar(list, len, indice);
 				retorno=1;
 				indice=-1;
 			}
@@ -146,7 +143,7 @@ int disp_modifica(Display displaysList[],int len)
 			retorno=-1;
 
 }*/
-int disp_menuModificar(Display displaysList[],int len,int indice)
+int contra_menuModificar(Contrataciones list[],int len,int indice)
 {
 	int retorno=-1;
 	int opcion;
@@ -161,15 +158,15 @@ int disp_menuModificar(Display displaysList[],int len,int indice)
 	{
 	case 1:
 		getString("ingrese el nuevo nombre", auxNombre);
-		strncpy(displaysList[indice].name,auxNombre,sizeof(displaysList->name));
+		strncpy(list[indice].nameVideo,auxNombre,sizeof(list->nameVideo));
 		break;
 	case 2:
 		utn_getFloat(&precioAux, "ingrese nuevo precio", "error ingrese numero validos", 1, 9999, 3);
-		displaysList[indice].price=precioAux;
+		//list[indice].price=precioAux;
 		break;
 	case 3:
 		getString("ingrese la nueva direccion", auxDireccion);
-		strncpy(displaysList[indice].addres,auxDireccion,sizeof(displaysList->addres));
+	//	strncpy(list[indice].addres,auxDireccion,sizeof(list->addres));
 		break;
 	default:
 		printf("no es un numero valido \n");
@@ -180,22 +177,22 @@ int disp_menuModificar(Display displaysList[],int len,int indice)
 return retorno;
 }
 
-int disp_Baja(Display displaysList[],int len)
+int contra_Baja(Contrataciones list[],int len)
 {
 	int auxId;
 	int retorno=0;
-	mostrarStruct(displaysList, len);
+	mostrarStruct(list, len);
 	int indice;
 	utn_getInt(&auxId, "ingrese el ide que quiere de dar de baja \n", "error ingrese un numero valido", 1, len, 4);
 
-	if (len!=0&&displaysList!=NULL)
+	if (len!=0&&list!=NULL)
 	{
 
-			indice=buscarIdStruct(displaysList, len, auxId);
+			indice=buscarIdStruct(list, len, auxId);
 			if(indice!=-1)
 			{
 
-			disp_bajaMenu(displaysList, len, indice);
+			disp_bajaMenu(list, len, indice);
 			retorno=1;
 
 			}
@@ -209,20 +206,20 @@ int disp_Baja(Display displaysList[],int len)
 	}
 
 
-int disp_bajaMenu(Display displaysList[],int len,int indice)
+int contra_bajaMenu(Contrataciones list[],int len,int indice)
 {
 	int auxBaja;
 	int retorno;
 
-	if (len!=0&&displaysList!=NULL)
+	if (len!=0&&list!=NULL)
 	{
-		mostrarUno(displaysList, indice);
+		mostrarUno(list, indice);
 		utn_getInt(&auxBaja, "Aprete 1 para dar de baja 2 para cancelar", "error ingrese un numero valido", 1, 2, 3);
 
 		if (auxBaja==1)
 		{
 			printf("se dio de baja\n");
-			displaysList[indice].flagEmpty=2;
+			list[indice].flagEmpty=2;
 			retorno=1;
 		 }
 		 else

@@ -8,7 +8,7 @@
 #ifndef PANTALLA_H_
 #define PANTALLA_H_
 #define OCUPADO 0
-#define LIBRE 1
+#define VACIO 1
 typedef struct {
 
 	int type;// 0 lcd 1 plasma
@@ -29,6 +29,7 @@ int disp_menuModificar(Display displaysList[],int len,int indice);
 int disp_modifica(Display displaysList[],int len);
 void mostrarUno(Display displaysList[],int indice);
 int disp_bajaMenu(Display displaysList[],int len,int indice);
+int disp_Baja(Display displaysList[],int len);
 //int deseaContinuar(void);
 
 
