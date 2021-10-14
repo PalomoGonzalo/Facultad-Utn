@@ -1,4 +1,5 @@
-20:05:14 **** Incremental Build of configuration Debug for project clase_11_pantalla_testParcial ****
+20:42:58 **** Incremental Build of configuration Debug for project esqueletoPrimerParcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\contrataciones.o" "..\\src\\contrataciones.c" 
-gcc -o clase_11_pantalla_testParcial.exe "src\\clase_11_pantalla_testParcial.o" "src\\contrataciones.o" "src\\funciones.o" "src\\pantalla.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\esqueleto.o" "..\\src\\esqueleto.c" 
+gcc -o esqueletoPrimerParcial.exe "src\\esqueleto.o" "src\\esqueletoPrimerParcial.o" "src\\funciones.o" 
+Info: Nothing to build for esqueletoPrimerParcial
