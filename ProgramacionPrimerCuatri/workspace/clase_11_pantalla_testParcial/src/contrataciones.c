@@ -232,3 +232,135 @@ int contra_bajaMenu(Contrataciones list[],int len,int indice)
 	return retorno;
 }
 
+
+
+
+typedef struct {
+
+	char cuilCliente[32];// 0 lcd 1 plasma
+	int flagEmpty;
+}Cliente;
+
+Cliente listaClientes[1000];
+
+int cliente_init(Cliente lista[],int len)
+{
+
+	int retorno =-1;
+	if(lista != NULL)
+	{
+		for(int i=0;i<len;i++)
+		{
+			lista[i].flagEmpty=VACIO;
+			retorno=1;
+
+		}
+	}
+	return retorno;
+}
+
+int cliente_estaCuitEnLista(Cliente list[],int len, char cuit[])
+{
+	int retorno=0;
+	int i;
+	for (i=0;i<len;i++)
+	{
+		if(list[i].flagEmpty==0)
+		{
+			if(strncmp(list[i].cuilCliente,cuit,32)==0)
+			{
+
+				retorno=1;
+				break;
+			}
+		}
+	}
+	return retorno;
+}
+
+int generListaClientes(Cliente listaClientes[],int lenListaClientes,Contrataciones listaContrataciones,int lenListaContrat)
+{
+	int retorno=-1;
+	int i;
+	int indiceListaCliente=0;
+	cliente_init(listaClientes, lenListaClientes);
+	for(i=0;i<lenListaContrat;i++)
+	{
+		if(listaContrataciones[i].flagEmpty==0)
+		{
+			if(cliente_estaCuitEnLista(listaClientes, lenListaClientes, listaContrataciones[i].cuilCliente)==0)
+			{
+				strncmp(listaClientes[indiceListaCliente].cuilCliente,listaContrataciones[i].cuilCliente,32);
+				listaContrataciones[indiceListaCliente].flagEmpty=0;
+				indiceListaCliente++;
+				retorno=0;
+
+			}
+		}
+	}
+
+	return retorno;
+
+
+	return retorno;
+}
+void informe2_clienteConImporteMasAltoAFacturar(Contrataciones listaContrataciones[], lenListaContrat)
+{
+
+	Cliente listaClientes[1000];
+	generListaClientes(listaClientes, 1000, listaContrataciones, lenListaContrat);
+	int i;
+	int iMax=0;
+	float importeMax;
+	if(listaClientes[i].flagEmpty==0)
+	{
+		importeMax=getImporteDeCliente(listaClientes[0].cuilCliente);
+
+		for(i=1;i<1000;i++)
+		{
+			if(listaClientes[i].flagEmpty==0)
+			{
+				if(getImporteDeCliente(listaClientes[i].cuilCliente)>importeMax)
+					{
+						importeMax=getImporteDeCliente(listaClientes[i].cuilCliente);
+					}
+		}
+
+			}
+	}
+}
+float getImporteDeCliente(char cuit[],Contrataciones listaConta[],int lenContrata,int lenDisplay, Display listaDisplays[])
+{
+	int i;
+	float acc=0;
+	for(i=0;i<listaConta;i++)
+	{
+		if(listaConta[i].flagEmpty==0)
+		{
+			if(strncmp(cuit,listaConta[i].cuilCliente,32)==0)
+			{
+				float importe=listaConta[i].cantidadDeDias* getPrecioPorDiaDeDisplay(listaConta[i].idCliente,listaDisplays,lenDisplay);
+				acc=acc+importe;
+			}
+
+
+		}
+
+
+	}
+
+}
+float getPrecioPorDiaDeDisplay(int idDisp,Display listaDisplays[],int lenDisplay)
+{
+	int posicionEncontrada;
+	posicionEncontrada=buscarIdStruct(listaDisplays, lenDisplay, idDisp);
+	if(posicionEncontrada!=-1)
+	{
+
+		return listaDisplays[posicionEncontrada].price;
+
+	}
+
+	return 0;
+
+}
