@@ -39,5 +39,9 @@ int arcade_alta(Arcade* lista_arcade[],int len,Salon* lista_salon[],int lenSalon
 int arcade_altaHardcodeada(Arcade *lista[],char* nombreJuego,char * nacionalidad,int tipoSonido,int fichas,int idSalon,int cantJugadores,int len,int indice);
 void juegos_mostrarStructura(Listajuegos* lista [],int len);
 int generListaJuegos(Listajuegos *aux_juegos[],int len_juegos,Arcade* lista_arcade[],int len_arcade);
+int arcade_modificar(Arcade *lista_arcade[],int len, Listajuegos* lista_juegos[], int len_juegos);
+int arcade_menuModificar(Arcade *lista[],int len,int indice,Listajuegos* lista_juegos[],int len_juegos);
+int arcade_Baja(Arcade* list[],int len);
+int arcade_bajaMenu(Arcade* list[],int len,int indice);
 
 #endif /* ARCADE_H_ */

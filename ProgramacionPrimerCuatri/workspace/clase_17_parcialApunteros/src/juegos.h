@@ -12,7 +12,7 @@ typedef struct {
 		char nombreJuego[32];
 	}Listajuegos;
 
-Listajuegos* juegos_new(void);
+	Listajuegos* juegos_new(void);
 int juegos_estaEnArcade(Listajuegos* list[],int len, char juego[]);
 int juegos_init(Listajuegos* lista[],int len);
 

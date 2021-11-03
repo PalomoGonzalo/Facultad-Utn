@@ -7,6 +7,7 @@
 #include "juegos.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 Listajuegos* juegos_new(void)
 {

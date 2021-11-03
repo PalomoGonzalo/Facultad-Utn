@@ -205,7 +205,7 @@ int arcade_altaHardcodeada(Arcade *lista[],char* nombreJuego,char * nacionalidad
 
 }
 
-/*int arcade_modificar(Arcade *lista_arcade[],int len, Listajuegos lista_juegos[], int len_juegos)
+int arcade_modificar(Arcade *lista_arcade[],int len, Listajuegos* lista_juegos[], int len_juegos)
 {
 	int idAux;
 	int retorno=0;
@@ -231,7 +231,7 @@ int arcade_altaHardcodeada(Arcade *lista[],char* nombreJuego,char * nacionalidad
 	}
 	return retorno;
 }
-*/
+
 int generListaJuegos(Listajuegos *lista_juegos[],int len_juegos,Arcade* lista_arcade[],int len_arcade)
 {
 	int retorno=-1;
@@ -270,6 +270,8 @@ int generListaJuegos(Listajuegos *lista_juegos[],int len_juegos,Arcade* lista_ar
 void juegos_mostrarStructura(Listajuegos* lista [],int len)
 {
 	int i;
+	if(lista!=NULL)
+	{
 	    printf("\nJUEGOS CARGADOS \n");
 	    for(i=0; i<len; i++)
 	    {
@@ -281,5 +283,104 @@ void juegos_mostrarStructura(Listajuegos* lista [],int len)
 
 	        }
 	    }
-
+	}
 }
+
+int arcade_menuModificar(Arcade *lista[],int len,int indice,Listajuegos* lista_juegos[],int len_juegos)
+{
+	int retorno=-1;
+	int opcion;
+	char auxNombre[32];
+	int  cantidadJugAux;
+	if(lista!=NULL&&lista_juegos!=NULL)
+	{
+		utn_getInt(&opcion, " Que desea modificar? \n 1-CANTIDAD DE JUGADORES\n 2-NOMBRE DEL JUEGO\n", "error ingrese un numero valid\n", 1, 2, 5);
+		switch(opcion)
+		{
+		case 1:
+			utn_getInt(&cantidadJugAux, "\ningrese nueva cantidad de jugadores \n", "error ingrese numero validos\n", 1, 9999, 3);
+			lista[indice]->cantidadDeJugadores=cantidadJugAux;
+			printf("\n se cambio correctamente \n");
+
+			break;
+		case 2:
+			juegos_mostrarStructura(lista_juegos, len_juegos);
+			getString("\ningrese el nombre que aparece en la lista \n", auxNombre);
+			if(juegos_estaEnArcade(lista_juegos, len_juegos,auxNombre)==1)
+				{
+					strncpy(lista[indice]->nombreJuego,auxNombre,sizeof(lista[indice]->nombreJuego));
+					printf ("se cambio correctamente\n");
+				}
+			else
+			{
+				printf("\n no existe ese nombre de juego \n");
+			}
+			break;
+		default:
+			printf("no es un numero valido \n");
+			break;
+		}
+	}
+return retorno;
+}
+
+int arcade_Baja(Arcade* list[],int len)
+{
+	int auxId;
+	int retorno=0;
+	arcade_mostrarStructura(list, len);
+	int indice;
+	int auxEncontro;
+	utn_getInt(&auxId, "\ningrese el id que quiere de dar de baja \n", "error ingrese un numero valido", 1, len, 4);
+
+	if (len!=0&&list!=NULL)
+	{
+
+		auxEncontro=arcade_buscarId(list, len, auxId, &indice);
+			if(auxEncontro!=-1)
+			{
+
+			arcade_bajaMenu(list, len, indice);
+			retorno=1;
+
+			}
+			else
+			{
+				printf("no existe el id\n");
+			}
+
+		}
+	return retorno;
+	}
+
+
+int arcade_bajaMenu(Arcade* list[],int len,int indice)
+{
+	int auxBaja;
+	int retorno;
+
+	if (len!=0&&list!=NULL)
+	{
+		arcade_mostrarUno(list, indice);
+		utn_getInt(&auxBaja, "Aprete 1 para dar de baja 2 para cancelar", "error ingrese un numero valido", 1, 2, 3);
+
+		if (auxBaja==1)
+		{
+			printf("se dio de baja\n");
+			free(list[indice]);
+			list[indice]=NULL;
+			retorno=1;
+		 }
+		 else
+		 {
+			 printf("no se dio de baja\n");
+			 retorno=0;
+		 }
+
+	}
+	return retorno;
+}
+
+
+
+
