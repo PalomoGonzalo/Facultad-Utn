@@ -1,28 +1,72 @@
-17:15:31 **** Incremental Build of configuration Debug for project clase_17_parcialApunteros ****
+17:40:31 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_17_parcialApunteros.o" "..\\src\\clase_17_parcialApunteros.c" 
-..\src\clase_17_parcialApunteros.c: In function 'main':
-..\src\clase_17_parcialApunteros.c:123:10: warning: implicit declaration of function 'informe_arcadeDosJugadores' [-Wimplicit-function-declaration]
-  123 |          informe_arcadeDosJugadores(lista_arcade, LEN_ARCADE, lista_salon, LEN_SALON);
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
-gcc -o clase_17_parcialApunteros.exe "src\\arcade.o" "src\\clase_17_parcialApunteros.o" "src\\funciones.o" "src\\informes.o" "src\\juegos.o" "src\\salon.o" 
-17:15:46 **** Incremental Build of configuration Debug for project clase_17_parcialApunteros ****
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:40:34 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_17_parcialApunteros.o" "..\\src\\clase_17_parcialApunteros.c" 
-gcc -o clase_17_parcialApunteros.exe "src\\arcade.o" "src\\clase_17_parcialApunteros.o" "src\\funciones.o" "src\\informes.o" "src\\juegos.o" "src\\salon.o" 
-17:17:00 **** Incremental Build of configuration Debug for project clase_17_parcialApunteros ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\testDeMiArraylist.o" "..\\src\\testDeMiArraylist.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+Info: Nothing to build for testDeMiArraylist
+17:41:52 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_17_parcialApunteros.o" "..\\src\\clase_17_parcialApunteros.c" 
-gcc -o clase_17_parcialApunteros.exe "src\\arcade.o" "src\\clase_17_parcialApunteros.o" "src\\funciones.o" "src\\informes.o" "src\\juegos.o" "src\\salon.o" 
-Info: Nothing to build for clase_17_parcialApunteros
-17:18:11 **** Incremental Build of configuration Debug for project clase_17_parcialApunteros ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\testDeMiArraylist.o" "..\\src\\testDeMiArraylist.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:42:08 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
-gcc -o clase_17_parcialApunteros.exe "src\\arcade.o" "src\\clase_17_parcialApunteros.o" "src\\funciones.o" "src\\informes.o" "src\\juegos.o" "src\\salon.o" 
-17:19:54 **** Incremental Build of configuration Debug for project clase_17_parcialApunteros ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\testDeMiArraylist.o" "..\\src\\testDeMiArraylist.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:43:08 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase_17_parcialApunteros.o" "..\\src\\clase_17_parcialApunteros.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
-gcc -o clase_17_parcialApunteros.exe "src\\arcade.o" "src\\clase_17_parcialApunteros.o" "src\\funciones.o" "src\\informes.o" "src\\juegos.o" "src\\salon.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\testDeMiArraylist.o" "..\\src\\testDeMiArraylist.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:43:50 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:44:03 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:45:31 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:46:00 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:46:16 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file testDeMiArraylist.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:46:21 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:46:48 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:46:58 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:47:12 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:48:22 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+17:51:23 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
+Info: Nothing to build for testDeMiArraylist
+17:54:09 **** Incremental Build of configuration Debug for project testDeMiArraylist ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o testDeMiArraylist.exe "src\\Controller.o" "src\\Employee.o" "src\\LinkedList.o" "src\\funciones.o" "src\\parser.o" "src\\testDeMiArraylist.o" 
